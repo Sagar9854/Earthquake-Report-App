@@ -15,7 +15,6 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.SimpleTimeZone;
 
 /**
  * Created by sagar on 21/12/17.
@@ -59,10 +58,10 @@ public class QuakeAdapter extends ArrayAdapter<QuakeDescription> {
         GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeTv.getBackground();
 
         // Get the appropriate background color based on the current earthquake magnitude
-        int magnitudeColor = getMagnitudeColor(currentDes.getMagnitude());
+        int magnitudeColor = getMagnitudeColor( currentDes.getMagnitude() );
 
         // Set the color on the magnitude circle
-        magnitudeCircle.setColor( ContextCompat.getColor( getContext(), magnitudeColor ));
+        magnitudeCircle.setColor( ContextCompat.getColor( getContext(), magnitudeColor ) );
 
         /**
          * splitting the QuakePlace description into two strings
@@ -72,13 +71,12 @@ public class QuakeAdapter extends ArrayAdapter<QuakeDescription> {
         int index = quakePlace.indexOf( "of" );
 
         String place, place_offset;
-        if(index == -1){
+        if (index == -1) {
             place_offset = "Near of ";
             place = quakePlace;
-        }
-        else{
-            place_offset = quakePlace.substring( 0, index+2 );
-            place = quakePlace.substring( index+3, quakePlace.length() );
+        } else {
+            place_offset = quakePlace.substring( 0, index + 2 );
+            place = quakePlace.substring( index + 3, quakePlace.length() );
         }
 
         placeTv.setText( place );
@@ -88,14 +86,14 @@ public class QuakeAdapter extends ArrayAdapter<QuakeDescription> {
          * setting the date by converting the UNIX formatted milliseconds to human readable text
          */
 
-        Date dateObject = new Date(currentDes.getmTimeInMilliSeconds());
-        String formattedDate = formatDate(dateObject);
+        Date dateObject = new Date( currentDes.getmTimeInMilliSeconds() );
+        String formattedDate = formatDate( dateObject );
         dateTv.setText( formattedDate );
 
         /**
          * setting the time by converting the UNIX formatted milliseconds to human readable text
          */
-        String formattedTime = formatTime(dateObject);
+        String formattedTime = formatTime( dateObject );
         timeTv.setText( formattedTime );
         return listItemView;
     }
@@ -105,16 +103,18 @@ public class QuakeAdapter extends ArrayAdapter<QuakeDescription> {
         return date.format( dateObject );
     }
 
-    private String formatTime(Date dateObject){
+    private String formatTime(Date dateObject) {
         SimpleDateFormat time = new SimpleDateFormat( "h:mm:ss" );
         return time.format( dateObject );
     }
+
     private String formatMagnitude(double magnitude) {
-        DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
-        return magnitudeFormat.format(magnitude);
+        DecimalFormat magnitudeFormat = new DecimalFormat( "0.0" );
+        return magnitudeFormat.format( magnitude );
     }
-    private int getMagnitudeColor(double mag){
-        switch ((int) mag){
+
+    private int getMagnitudeColor(double mag) {
+        switch ((int) mag) {
             case 1:
                 return R.color.magnitude1;
             case 2:

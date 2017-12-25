@@ -10,7 +10,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,23 +23,32 @@ import java.util.List;
 public final class QueryUtils {
 
     public static final String LOG_TAG = QueryUtils.class.getSimpleName();
+
+    /**
+     * Create a private constructor because no one should ever create a {@link QueryUtils} object.
+     * This class is only meant to hold static variables and methods, which can be accessed
+     * directly from the class name QueryUtils (and an object instance of QueryUtils is not needed).
+     */
+    private QueryUtils() {
+    }
+
     /**
      * Query the USGS dataset and return an {@link QuakeDescription} object to represent a single earthquake.
      */
     public static List<QuakeDescription> fetchEarthquakeData(String requestUrl) {
         // Create URL object
-        URL url = createUrl(requestUrl);
+        URL url = createUrl( requestUrl );
 
         // Perform HTTP request to the URL and receive a JSON response back
         String jsonResponse = null;
         try {
-            jsonResponse = makeHttpRequest(url);
+            jsonResponse = makeHttpRequest( url );
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Error closing input stream", e);
+            Log.e( LOG_TAG, "Error closing input stream", e );
         }
 
         // Extract relevant fields from the JSON response and create an {@link Event} object
-        List<QuakeDescription> earthquake = extractFeaturesFromJson(jsonResponse);
+        List<QuakeDescription> earthquake = extractFeaturesFromJson( jsonResponse );
 
         // Return the {@link Event}
         return earthquake;
@@ -52,9 +60,9 @@ public final class QueryUtils {
     private static URL createUrl(String stringUrl) {
         URL url = null;
         try {
-            url = new URL(stringUrl);
+            url = new URL( stringUrl );
         } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "Error with creating URL ", e);
+            Log.e( LOG_TAG, "Error with creating URL ", e );
         }
         return url;
     }
@@ -74,21 +82,21 @@ public final class QueryUtils {
         InputStream inputStream = null;
         try {
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(10000 /* milliseconds */);
-            urlConnection.setConnectTimeout(15000 /* milliseconds */);
-            urlConnection.setRequestMethod("GET");
+            urlConnection.setReadTimeout( 10000 /* milliseconds */ );
+            urlConnection.setConnectTimeout( 15000 /* milliseconds */ );
+            urlConnection.setRequestMethod( "GET" );
             urlConnection.connect();
 
             // If the request was successful (response code 200),
             // then read the input stream and parse the response.
             if (urlConnection.getResponseCode() == 200) {
                 inputStream = urlConnection.getInputStream();
-                jsonResponse = readFromStream(inputStream);
+                jsonResponse = readFromStream( inputStream );
             } else {
-                Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
+                Log.e( LOG_TAG, "Error response code: " + urlConnection.getResponseCode() );
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e( LOG_TAG, "Problem retrieving the earthquake JSON results.", e );
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -107,24 +115,15 @@ public final class QueryUtils {
     private static String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder output = new StringBuilder();
         if (inputStream != null) {
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
-            BufferedReader reader = new BufferedReader(inputStreamReader);
+            InputStreamReader inputStreamReader = new InputStreamReader( inputStream, Charset.forName( "UTF-8" ) );
+            BufferedReader reader = new BufferedReader( inputStreamReader );
             String line = reader.readLine();
             while (line != null) {
-                output.append(line);
+                output.append( line );
                 line = reader.readLine();
             }
         }
         return output.toString();
-    }
-
-
-    /**
-     * Create a private constructor because no one should ever create a {@link QueryUtils} object.
-     * This class is only meant to hold static variables and methods, which can be accessed
-     * directly from the class name QueryUtils (and an object instance of QueryUtils is not needed).
-     */
-    private QueryUtils() {
     }
 
     /**
@@ -148,15 +147,15 @@ public final class QueryUtils {
 
             JSONArray featuresArray = rootObject.getJSONArray( "features" );
 
-            if(featuresArray.length() > 0){
+            if (featuresArray.length() > 0) {
                 for (int i = 0; i < featuresArray.length(); i++) {
-                    JSONObject propertiesObj = featuresArray.getJSONObject( i ).getJSONObject( "properties" ) ;
+                    JSONObject propertiesObj = featuresArray.getJSONObject( i ).getJSONObject( "properties" );
 
                     Double mag = propertiesObj.getDouble( "mag" );
                     String place = propertiesObj.getString( "place" );
                     long time = propertiesObj.getLong( "time" );
                     String url = propertiesObj.getString( "url" );
-                    earthquakes.add( new QuakeDescription( mag , place, time, url ) );
+                    earthquakes.add( new QuakeDescription( mag, place, time, url ) );
 
                 }
             }
@@ -165,7 +164,7 @@ public final class QueryUtils {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e( "QueryUtils", "Problem parsing the earthquake JSON results", e );
         }
 
         // Return the list of earthquakes
