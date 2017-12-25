@@ -67,9 +67,20 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById( R.id.swipe_refresh );
 
+
+        // Find a reference to the {@link ListView} in the layout
+        final ListView earthquakeListView = (ListView) findViewById( R.id.list );
         // Create a new {@link ArrayAdapter} of earthquakes
         mAdapter = new QuakeAdapter(
                 this, new ArrayList<QuakeDescription>() );
+        // Set the adapter on the {@link ListView}
+        // so the list can be populated in the user interface
+        // Another setAdapter need so that when the mAdapter value changes,
+        // it updates automatically
+        // why it does not work when the setAdapter is in between if else statements???
+        // why did the if else one work when not using swipeRefresh just like in master branch???
+        earthquakeListView.setAdapter( mAdapter );
+        //Log.i( LOG_TAG, "onCreate: " + "HERE! NOT THERE!!" );
 
         loaderManager = getLoaderManager();
         mEmptyStateTextView = (TextView) findViewById( R.id.empty_view );
@@ -78,15 +89,12 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
             progressBar.setVisibility( View.GONE );
             setNoInternet();
         } else {
-            // Find a reference to the {@link ListView} in the layout
-            final ListView earthquakeListView = (ListView) findViewById( R.id.list );
 
             earthquakeListView.setEmptyView( mEmptyStateTextView );
-
             // Set the adapter on the {@link ListView}
             // so the list can be populated in the user interface
             earthquakeListView.setAdapter( mAdapter );
-
+            Log.i( LOG_TAG, "onCreate: " + "IT IS PRININTING FROM HERE ZZZZZ" );
             // Log.e( LOG_TAG, "onCreate: " + "Layout is created here\n");
 
             earthquakeListView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
@@ -113,11 +121,10 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
             @Override
             public void onRefresh() {
                 //TODO : update the data
-                //fetchMovies();
                 swipeRefreshLayout.setRefreshing( true );
 
                 Log.i( LOG_TAG, "onRefresh: " + "the function is here\n" );
-                if (isNetworkAvailable() == true) {
+                if (isNetworkAvailable() == true || (mAdapter!=null && !mAdapter.isEmpty())) {
                     findViewById( R.id.no_internet_connection ).setVisibility( View.GONE );
                     loaderManager.initLoader( EARTHQUAKE_LOADER_ID, null, EarthquakeActivity.this );
 
@@ -163,13 +170,15 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         mEmptyStateTextView.setText( R.string.empty );
         Log.i( LOG_TAG, "onLoadFinished: " + "THE OPERATION HAS FINISHED\n" );
         // Clear the adapter of previous earthquake data
-        if (mAdapter != null)
-            mAdapter.clear();
+
+        mAdapter.clear();
 
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
+        Log.i( LOG_TAG, "onLoadFinished: " + "empty value of data is : " + data.isEmpty() );
         if (data != null && !data.isEmpty()) {
             mAdapter.addAll( data );
+            mAdapter.notifyDataSetChanged();
         }
     }
 

@@ -1,4 +1,4 @@
-#Mon Dec 25 22:59:03 IST 2017
+#Mon Dec 25 23:48:02 IST 2017
 base.0=/home/sagar/Desktop/Android/EarthquakeApp/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
