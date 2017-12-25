@@ -1,0 +1,93 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+MERGED from [com.android.support:appcompat-v7:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.3.0.aar/62bf084c0c9093fafd8f6fd2da5c3829/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.3.0.aar/ecea0220027d86d877abeba9e72420f7/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.3.0.aar/64c1b4b24c8d69937c16f85a6a167060/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-v4-23.3.0.aar/4bfcfe7144dbb9a1f3f19c336423c4cb/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+	package
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:16:5-46
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:1-36:12
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:15:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:18:5-67
+	android:name
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:18:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:19:5-79
+	android:name
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:19:22-76
+application
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:21:5-34:19
+MERGED from [com.android.support:appcompat-v7:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.3.0.aar/62bf084c0c9093fafd8f6fd2da5c3829/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.3.0.aar/62bf084c0c9093fafd8f6fd2da5c3829/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.3.0.aar/ecea0220027d86d877abeba9e72420f7/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.3.0.aar/ecea0220027d86d877abeba9e72420f7/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.3.0.aar/64c1b4b24c8d69937c16f85a6a167060/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.3.0.aar/64c1b4b24c8d69937c16f85a6a167060/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-v4-23.3.0.aar/4bfcfe7144dbb9a1f3f19c336423c4cb/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-v4-23.3.0.aar/4bfcfe7144dbb9a1f3f19c336423c4cb/AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:25:9-35
+	android:label
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:24:9-41
+	android:icon
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:23:9-43
+	android:allowBackup
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:22:9-35
+	android:theme
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:26:9-40
+activity#com.example.android.quakereport.EarthquakeActivity
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:28:9-33:20
+	android:name
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:28:19-53
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:29:13-32:29
+action#android.intent.action.MAIN
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:31:17-77
+	android:name
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml:31:27-74
+uses-sdk
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.3.0.aar/62bf084c0c9093fafd8f6fd2da5c3829/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.3.0.aar/62bf084c0c9093fafd8f6fd2da5c3829/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.3.0.aar/ecea0220027d86d877abeba9e72420f7/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.3.0.aar/ecea0220027d86d877abeba9e72420f7/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.3.0.aar/64c1b4b24c8d69937c16f85a6a167060/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.3.0.aar/64c1b4b24c8d69937c16f85a6a167060/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-v4-23.3.0.aar/4bfcfe7144dbb9a1f3f19c336423c4cb/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/support-v4-23.3.0.aar/4bfcfe7144dbb9a1f3f19c336423c4cb/AndroidManifest.xml:20:5-43
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.3.0] /home/sagar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.3.0.aar/62bf084c0c9093fafd8f6fd2da5c3829/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sagar/Desktop/Android/EarthquakeApp/app/src/main/AndroidManifest.xml

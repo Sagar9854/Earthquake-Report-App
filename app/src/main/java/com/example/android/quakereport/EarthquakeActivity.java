@@ -143,11 +143,6 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         return activeNetworkInfo != null;
     }
 
-    /**
-     * This method is called when swipe refresh is pulled down
-     */
-
-
     @Override
     public Loader<List<QuakeDescription>> onCreateLoader(int i, Bundle bundle) {
         //Log.e( LOG_TAG, "mLoader: " + "LOADER is loaded here\n");
